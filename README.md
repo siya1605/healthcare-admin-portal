@@ -53,8 +53,9 @@ A responsive, multi-page healthcare management dashboard built using HTML, CSS, 
 ---
 
 ## 🔐 Demo Login
-'''Username: admin
-Password: careplus123'''
+Username: admin
+
+Password: careplus123
 
 ---
 
