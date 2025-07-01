@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CarePlus Hospital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f4f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2e86ab;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #2e5c77;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+      font-size: 1.1em;
+    }
+
+    .hero button {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #2e86ab;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero button:hover {
+      background-color: #1f5e7a;
+    }
+
+    .features {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .features h3 {
+      text-align: center;
+      font-size: 1.8em;
+      color: #2e5c77;
+      margin-bottom: 30px;
+    }
+
+    .features ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      list-style-type: none;
+    }
+
+    .features li {
+      background-color: white;
+      padding: 20px;
+      border-left: 5px solid #2e86ab;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    footer {
+      background-color: #2e86ab;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CarePlus Hospital</h1>
+    <p>Your Health, Our Priority</p>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Our Hospital Management System</h2>
+    <p>Smart, efficient and secure digital healthcare management — all in one place.</p>
+    <button onclick="window.location.href='login.html'">Get Started</button>
+    <button id="toggleFeaturesBtn">Show/Hide Features</button>
+  </section>
+
+  <section class="features" id="featuresSection">
+    <h3>Key Features</h3>
+    <ul>
+      <li>🩺 Electronic Patient Records</li>
+      <li>📅 Smart Appointment Booking</li>
+      <li>💊 Pharmacy Inventory Management</li>
+      <li>📈 Medical Reports & Analytics</li>
+      <li>👨‍⚕️ Doctor Availability Tracking</li>
+      <li>🛏️ Bed & Room Management</li>
+      <li>📋 Discharge Summary Generator</li>
+      <li>📱 Patient Mobile App Integration</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> CarePlus Hospital. All rights reserved.
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Toggle features section
+    const toggleBtn = document.getElementById("toggleFeaturesBtn");
+    const featuresSection = document.getElementById("featuresSection");
+
+    toggleBtn.addEventListener("click", () => {
+      if (featuresSection.style.display === "none") {
+        featuresSection.style.display = "block";
+      } else {
+        featuresSection.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+

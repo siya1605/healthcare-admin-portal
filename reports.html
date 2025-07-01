@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports | CarePlus Hospital</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>CarePlus</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="patients.html">Patient Records</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="reports.html" class="active">Reports</a>
+    <a href="settings.html">Settings</a>
+    <a href="login.html">Logout</a>
+  </div>
+
+  <div class="main">
+    <h1>Reports Summary</h1>
+
+    <div class="card">
+      <h3>Overview</h3>
+      <p><strong>Total Patients:</strong> <span id="patientCount">0</span></p>
+      <p><strong>Total Appointments:</strong> <span id="appointmentCount">0</span></p>
+      <p><strong>Total Doctors:</strong> <span id="doctorCount">0</span></p>
+    </div>
+
+    <div class="card">
+      <h3>Doctors by Specialty</h3>
+      <canvas id="doctorChart" height="150"></canvas>
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> CarePlus Hospital. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const patients = JSON.parse(localStorage.getItem("patients")) || [];
+    const appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+    const doctors = JSON.parse(localStorage.getItem("doctors")) || [];
+
+    document.getElementById("patientCount").textContent = patients.length;
+    document.getElementById("appointmentCount").textContent = appointments.length;
+    document.getElementById("doctorCount").textContent = doctors.length;
+
+    // Count specialties
+    const specialtyCounts = {};
+    doctors.forEach(doc => {
+      specialtyCounts[doc.spec] = (specialtyCounts[doc.spec] || 0) + 1;
+    });
+
+    const specLabels = Object.keys(specialtyCounts);
+    const specData = Object.values(specialtyCounts);
+
+    new Chart(document.getElementById("doctorChart"), {
+      type: "bar",
+      data: {
+        labels: specLabels,
+        datasets: [{
+          label: "# of Doctors",
+          data: specData,
+          backgroundColor: "rgba(46, 134, 171, 0.7)"
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

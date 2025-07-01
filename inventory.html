@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory | CarePlus Hospital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>CarePlus</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="patients.html">Patient Records</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="inventory.html" class="active">Inventory</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="reports.html">Reports</a>
+    <a href="settings.html">Settings</a>
+    <a href="login.html">Logout</a>
+  </div>
+
+  <div class="main">
+    <h1>Medicine Inventory</h1>
+
+    <div class="card">
+      <h3>Add Medicine</h3>
+      <form id="inventoryForm">
+        <input type="text" id="medName" placeholder="Medicine Name" required />
+        <input type="number" id="medQty" placeholder="Quantity" required />
+        <input type="date" id="medExpiry" required />
+        <button type="submit">Add Medicine</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Inventory List</h3>
+      <ul id="inventoryList"></ul>
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> CarePlus Hospital. All rights reserved.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

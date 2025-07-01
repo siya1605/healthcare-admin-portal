@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings | CarePlus Hospital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>CarePlus</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="patients.html">Patient Records</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="reports.html">Reports</a>
+    <a href="settings.html" class="active">Settings</a>
+    <a href="login.html">Logout</a>
+  </div>
+
+  <div class="main">
+    <h1>System Settings</h1>
+
+    <div class="card">
+      <h3>Display Options</h3>
+      <button id="darkModeToggle" class="exportBtn">Toggle Dark Mode</button>
+    </div>
+
+    <div class="card">
+      <h3>Export Data</h3>
+      <button class="exportBtn" onclick="exportListToCSV('patientList', 'patients.csv')">Export Patients</button>
+      <button class="exportBtn" onclick="exportListToCSV('appointmentList', 'appointments.csv')">Export Appointments</button>
+      <button class="exportBtn" onclick="exportListToCSV('doctorList', 'doctors.csv')">Export Doctors</button>
+      <button class="exportBtn" onclick="exportListToCSV('inventoryList', 'inventory.csv')">Export Inventory</button>
+      <p style="font-size: 0.9em; margin-top: 10px; color: gray;">Make sure you are on the respective page before exporting.</p>
+    </div>
+
+    <div class="card">
+      <h3>About</h3>
+      <p>CarePlus Hospital Management System is designed to streamline patient care, doctor scheduling, and medical inventory.</p>
+      <p>Version: <strong>1.0</strong></p>
+      <p>Developer: <strong>Siya Shah</strong></p>
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> CarePlus Hospital. All rights reserved.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

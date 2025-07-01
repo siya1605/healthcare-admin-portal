@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patients | CarePlus Hospital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>CarePlus</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="patients.html" class="active">Patient Records</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="reports.html">Reports</a>
+    <a href="settings.html">Settings</a>
+    <a href="login.html">Logout</a>
+  </div>
+
+  <div class="main">
+    <h1>Patient Records</h1>
+
+    <div class="card">
+      <h3>Add New Patient</h3>
+      <form id="patientForm">
+        <input type="text" placeholder="Full Name" required />
+        <input type="number" placeholder="Age" required />
+        <input type="text" placeholder="Gender" required />
+        <input type="text" placeholder="Disease/Condition" required />
+        <button type="submit">Add Patient</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Existing Patients</h3>
+      <input type="text" id="searchPatient" placeholder="Search patients..." />
+      <ul id="patientList">
+        <!-- Dynamic patient list -->
+      </ul>
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> CarePlus Hospital. All rights reserved.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
